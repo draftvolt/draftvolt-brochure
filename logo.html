@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DRAFTVOLT — Brand Marks</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark:    #0C0A07;
+    --bg-light:   #F0E8D5;
+    --bg-mid:     #15110D;
+    --bone:       #E9E0C9;
+    --bone-soft:  #9A8E78;
+    --ink:        #1A1612;
+    --ink-soft:   #5A4A3C;
+    --copper:     #C9762E;
+    --rule-d:     rgba(233,224,201,0.16);
+    --rule-l:     rgba(26,22,18,0.16);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    background: var(--bg-dark);
+    color: var(--bone);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .nav {
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--rule-d);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bone-soft);
+  }
+  .nav b { color: var(--copper); font-weight: 500; }
+
+  section {
+    padding: clamp(56px, 9vw, 140px) clamp(24px, 5vw, 64px);
+    border-bottom: 1px solid var(--rule-d);
+    position: relative;
+  }
+  section.dark  { background: var(--bg-dark);  color: var(--bone); }
+  section.mid   { background: var(--bg-mid);   color: var(--bone); border-color: var(--rule-d); }
+  section.light { background: var(--bg-light); color: var(--ink); border-color: var(--rule-l); }
+
+  .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 18px;
+    display: block;
+  }
+  section.light .label { color: var(--copper); }
+
+  h1 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 800;
+    font-size: clamp(48px, 8vw, 120px);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin: 0 0 28px;
+  }
+  h2 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin: 0 0 28px;
+  }
+  p { line-height: 1.6; max-width: 64ch; margin: 0 0 16px; font-size: 16px; }
+  section.light p { color: var(--ink); }
+  section.dark p, section.mid p { color: var(--bone-soft); }
+
+  .stage {
+    margin: 36px 0;
+    max-width: 720px;
+  }
+  .stage img { width: 100%; height: auto; display: block; }
+
+  .marks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 32px;
+    margin: 36px 0;
+    max-width: 920px;
+  }
+  .marks .cell {
+    border: 1px solid currentColor;
+    border-color: var(--rule-d);
+    aspect-ratio: 1 / 1;
+    display: grid; place-items: center;
+    padding: 24px;
+    position: relative;
+  }
+  section.light .marks .cell { border-color: var(--rule-l); }
+  .marks .cell img { width: 80%; height: auto; }
+  .marks .cap {
+    position: absolute;
+    bottom: 8px; left: 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--bone-soft);
+  }
+  section.light .marks .cap { color: var(--ink-soft); }
+
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+    margin: 36px 0;
+    max-width: 920px;
+  }
+  .sw {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .sw .chip {
+    height: 100px;
+    border: 1px solid var(--rule-d);
+  }
+  section.light .sw .chip { border-color: var(--rule-l); }
+  .sw .name {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .sw .hex {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--bone-soft);
+  }
+  section.light .sw .hex { color: var(--ink-soft); }
+
+  .specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 36px;
+    max-width: 1080px;
+  }
+  .spec-row {
+    border-top: 1px solid var(--rule-d);
+    padding-top: 18px;
+  }
+  section.light .spec-row { border-top-color: var(--rule-l); }
+  .spec-row .lab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 6px;
+  }
+  .spec-row .val {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+  }
+  .spec-row .meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--bone-soft);
+    margin-top: 4px;
+  }
+  section.light .spec-row .meta { color: var(--ink-soft); }
+
+  code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    background: var(--bg-mid);
+    color: var(--copper);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+  section.light code { background: rgba(26,22,18,0.06); color: var(--copper); }
+
+  .footnote {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bone-soft);
+    padding: 28px 48px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <span><b>DRAFTVOLT</b> · BRAND MARKS</span>
+  <span>vol. 01 · MMXXVI</span>
+</nav>
+
+<!-- Primary lockup, dark -->
+<section class="dark">
+  <span class="label">01 — Primary Lockup · Dark</span>
+  <h1>The mark.</h1>
+  <p>A lightning bolt drawn with drafting precision, framed by a square with corner registration crosshairs — echoing the technical-illustration plates that fill the brochure. Wordmark in Big Shoulders Display 900, copper rule beneath, mono subtitle.</p>
+  <div class="stage">
+    <img src="logo.svg" alt="DRAFTVOLT primary lockup, dark variant" />
+  </div>
+</section>
+
+<!-- Light variant -->
+<section class="light">
+  <span class="label">02 — Primary Lockup · Light</span>
+  <h2>For light surfaces.</h2>
+  <p>The same lockup in ink, for use on cream, paper, or any light background. Copper accent stays the same — it carries the brand across both modes.</p>
+  <div class="stage">
+    <img src="logo-light.svg" alt="DRAFTVOLT primary lockup, light variant" />
+  </div>
+</section>
+
+<!-- Mark -->
+<section class="mid">
+  <span class="label">03 — Mark Only</span>
+  <h2>For tight spaces.</h2>
+  <p>The framed bolt, on its own — for avatars, app icons, social profiles, and anywhere the wordmark won't fit. Inherits the surrounding text color, so the same file works against any background.</p>
+  <div class="marks" style="color: var(--bone)">
+    <div class="cell"><img src="logo-mark.svg" alt="DRAFTVOLT mark"/><span class="cap">160 PX</span></div>
+    <div class="cell"><img src="logo-mark.svg" alt="DRAFTVOLT mark" style="width: 60%"/><span class="cap">96 PX</span></div>
+    <div class="cell"><img src="logo-mark.svg" alt="DRAFTVOLT mark" style="width: 40%"/><span class="cap">48 PX</span></div>
+    <div class="cell"><img src="favicon.svg" alt="DRAFTVOLT favicon" style="width: 30%"/><span class="cap">FAVICON</span></div>
+  </div>
+</section>
+
+<!-- Color system -->
+<section class="dark">
+  <span class="label">04 — Color System</span>
+  <h2>Three colors. No more.</h2>
+  <div class="swatches">
+    <div class="sw">
+      <div class="chip" style="background: #0C0A07"></div>
+      <div class="name">Ink Black</div>
+      <div class="hex">#0C0A07</div>
+    </div>
+    <div class="sw">
+      <div class="chip" style="background: #E9E0C9"></div>
+      <div class="name">Bone</div>
+      <div class="hex">#E9E0C9</div>
+    </div>
+    <div class="sw">
+      <div class="chip" style="background: #C9762E"></div>
+      <div class="name">Copper</div>
+      <div class="hex">#C9762E</div>
+    </div>
+  </div>
+</section>
+
+<!-- Typography -->
+<section class="light">
+  <span class="label">05 — Typography</span>
+  <h2>Display, body, mono.</h2>
+  <div class="specs">
+    <div class="spec-row">
+      <div class="lab">Display</div>
+      <div class="val" style="font-size: 40px">Big Shoulders Display</div>
+      <div class="meta">Weights 700–900 · uppercase · letter-spacing −0.02em</div>
+    </div>
+    <div class="spec-row">
+      <div class="lab">Body</div>
+      <div class="val" style="font-family: 'IBM Plex Sans', sans-serif; font-weight: 500; font-size: 22px; text-transform: none;">IBM Plex Sans</div>
+      <div class="meta">Weights 400–600 · for body text and paragraphs</div>
+    </div>
+    <div class="spec-row">
+      <div class="lab">Mono</div>
+      <div class="val" style="font-family: 'IBM Plex Mono', monospace; font-weight: 400; font-size: 22px; text-transform: none; letter-spacing: 0.04em;">IBM Plex Mono</div>
+      <div class="meta">For technical labels, small caps, captions</div>
+    </div>
+  </div>
+</section>
+
+<!-- Files -->
+<section class="dark">
+  <span class="label">06 — Files</span>
+  <h2>Available marks.</h2>
+  <ul style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.06em; line-height: 2.2; padding-left: 0; list-style: none;">
+    <li><code>logo.svg</code> — primary horizontal lockup, dark variant (use on dark backgrounds)</li>
+    <li><code>logo-light.svg</code> — primary horizontal lockup, light variant</li>
+    <li><code>logo-mark.svg</code> — square mark only, inherits color from surrounding CSS</li>
+    <li><code>favicon.svg</code> — 32px square icon for browser tabs and social</li>
+  </ul>
+  <p style="margin-top: 24px">All files are pure SVG; the wordmark uses live web fonts (Big Shoulders Display 900 + IBM Plex Mono 400). For print, business cards, or vehicle signage, re-render with the fonts outlined.</p>
+</section>
+
+<div class="footnote">DRAFTVOLT · ELECTRICAL · DRAFTING · YEREVAN · MMXXVI</div>
+
+</body>
+</html>
